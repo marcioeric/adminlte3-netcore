@@ -7,15 +7,15 @@ namespace WebApplication.ViewComponents
     {
         public IViewComponentResult Invoke(string filter)
         {
-            string header;
+            Tuple<string> header;
 
             if (ViewBag.PageHeader == null)
             {
-                header = string.Empty;
+                header = new Tuple<string>(string.Empty);
             }
             else
             {
-                header = ViewBag.PageHeader as string;
+                header = ViewBag.PageHeader as Tuple<string>;
             }
             return View(header);
         }

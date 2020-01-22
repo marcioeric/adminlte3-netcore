@@ -1,0 +1,38 @@
+﻿@model List<PageAlert>
+
+@foreach (var pageAlert in Model)
+{
+    switch (pageAlert.Type)
+    {
+        case PageAlertType.Error:
+            <div class="alert alert-danger alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <h5><i class="icon fas fa-ban"></i> @pageAlert.Title</h5>
+                @pageAlert.Description
+            </div>
+            break;
+        case PageAlertType.Info:
+            <div class="alert alert-info alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <h5><i class="icon fas fa-info"></i> @pageAlert.Title</h5>
+                @pageAlert.Description
+            </div>
+            break;
+        case PageAlertType.Warning:
+            <div class="alert alert-warning alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <h5><i class="icon fas fa-exclamation-triangle"></i> @pageAlert.Title</h5>
+                @pageAlert.Description
+            </div>
+            break;
+        case PageAlertType.Success:
+            <div class="alert alert-success alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <h5><i class="icon fas fa-check"></i> @pageAlert.Title</h5>
+                @pageAlert.Description
+            </div>
+            break;
+        default:
+            throw new ArgumentOutOfRangeException();
+    }
+}
