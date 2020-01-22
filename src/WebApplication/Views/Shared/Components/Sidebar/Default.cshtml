@@ -1,0 +1,85 @@
+﻿@model List<Menu>
+<div class="sidebar">
+    <!-- Sidebar user panel (optional) -->
+    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+            <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+            <a href="#" class="d-block">Alexander Pierce</a>
+        </div>
+    </div>
+
+    <!-- Sidebar Menu -->
+    <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            @foreach (var menu in Model)
+            {
+                if (menu.Type == MenuType.Header)
+                {
+                    <li class="nav-header">@menu.DisplayName.ToUpper()</li>
+                }
+                else if (menu.Type == MenuType.Link)
+                {
+                    var isActive = string.Empty;
+                    if (menu.Url != "/" && @Context.Request.Path.Value.Contains(menu.Url))
+                    {
+                        isActive = "active";
+                    }
+
+                    <li class="nav-item">
+                        <a href="@menu.Url" class="nav-link @isActive">
+                            <i class="nav-icon @menu.Icon"></i>
+                            <p>@menu.DisplayName</p>
+                            @if (!(menu.Badge is null))
+                            {
+                                <span class="badge badge-@menu.Badge.Color right">@menu.Badge.Text</span>
+                            }
+                        </a>
+                    </li>
+                }
+                else if (menu.Type == MenuType.Tree)
+                {
+                    var isActive = string.Empty;
+                    var menuIsOpen = string.Empty;
+                    if (menu.Children.Any(x => Context.Request.Path.Value.Contains(x.Url)))
+                    {
+                        isActive = "active";
+                        menuIsOpen = "menu-open";
+                    }
+                    <li class="nav-item has-treeview @menuIsOpen">
+                        <a href="#" class="nav-link @isActive">
+                            <i class="nav-icon @menu.Icon"></i>
+                            <p>
+                                @menu.DisplayName
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            @foreach (var menuChild in menu.Children)
+                            {
+                                isActive = string.Empty;
+                                if (Context.Request.Path.Value.EndsWith(menuChild.Url))
+                                {
+                                    isActive = "active";
+                                }
+
+                                <li class="nav-item">
+                                    <a href="@menuChild.Url" class="nav-link @isActive">
+                                        <i class="nav-icon @menuChild.Icon"></i>
+                                        <p>@menuChild.DisplayName</p>
+                                        @if (!(menuChild.Badge is null))
+                                        {
+                                            <span class="badge badge-@menuChild.Badge.Color right">@menuChild.Badge.Text</span>
+                                        }
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </li>
+                }
+            }
+        </ul>
+    </nav>
+    <!-- /.sidebar-menu -->
+</div>
