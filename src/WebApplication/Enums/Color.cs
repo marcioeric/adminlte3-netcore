@@ -6,6 +6,6 @@ namespace WebApplication.Enums
         Info,
         Default,
         Warning,
-        Error
+        Danger
     }
 }

@@ -20,7 +20,7 @@
 
         <!-- Sidebar Menu -->
         <nav class="mt-2">
-            <ul class="nav nav-pills nav-sidebar nav-compact nav-child-indent flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <ul class="nav nav-pills nav-sidebar nav-child-indent flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 @foreach (var menu in Model)
                 {
                     if (menu.Type == MenuType.Header)
@@ -60,7 +60,7 @@
                                 <p>@menu.DisplayName</p>
                                 @if (!(menu.Badge is null))
                                 {
-                                    <span class="badge badge-@menu.Badge.Color right">@menu.Badge.Text</span>
+                                    <span class="badge badge-@menu.Badge.Color.ToString().ToLower() right">@menu.Badge.Text</span>
                                 }
                             </a>
                         </li>
@@ -104,7 +104,7 @@
                                             <p>@menuChild.DisplayName</p>
                                             @if (!(menuChild.Badge is null))
                                             {
-                                                <span class="badge badge-@menuChild.Badge.Color right">@menuChild.Badge.Text</span>
+                                                <span class="badge badge-@menuChild.Badge.Color.ToString().ToLower() right">@menuChild.Badge.Text</span>
                                             }
                                         </a>
                                     </li>

@@ -27,7 +27,12 @@ namespace WebApplication.ViewComponents
                     DisplayName = "Bills",
                     Type = MenuType.Link,
                     Url = Url.Action("Bills", "Financial"),
-                    Icon = null
+                    Icon = null,
+                    Badge = new Badge()
+                    {
+                        Color = Color.Danger,
+                        Text = "19"
+                    }
                 }
             };
 
