@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Márcio Nicolau",
+  "classifications": [ "Common", "MVC", "C#8", "Web Application" ],
+  "identity": "AspNetCore.AdminLte3",
+  "name": "Admin LTE 3 - Asp.Net Core",
+  "shortName": "adminlte3",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  }
+}
