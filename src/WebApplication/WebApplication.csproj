@@ -17,6 +17,7 @@
         <IsPackable>true</IsPackable>
         <RepositoryUrl>https://github.com/marcio-eric/adminlte3-netcore</RepositoryUrl>
         <RepositoryType>Git</RepositoryType>
+        <PackageLicenseUrl>https://github.com/marcio-eric/adminlte3-netcore/blob/master/LICENSE</PackageLicenseUrl>
     </PropertyGroup>
 
     <ItemGroup>
