@@ -13,6 +13,14 @@ namespace WebApplication.ViewComponents
         {
             var sidebars = new List<Menu>();
 
+            var accountMenus = new List<Menu>()
+            {
+                new Menu("Login",Url.Action("Login", "Account"), MenuType.Link, icon: "fas fa-user"),
+                new Menu("Register",Url.Action("Register", "Account"), MenuType.Link, icon: "fas fa-user-plus"),
+                new Menu("Forgot Password",Url.Action("ForgotPassword", "Account"), MenuType.Link, icon: "far fa-circle"),
+                new Menu("Recover Password",Url.Action("RecoverPassword", "Account"), MenuType.Link, icon: "far fa-circle")
+            };
+
             var financialMenus = new List<Menu>()
             {
                 new Menu()
@@ -39,6 +47,7 @@ namespace WebApplication.ViewComponents
             sidebars.Add(new Menu("Main Navigation"));
             sidebars.Add(new Menu("Home", Url.Action("Index", "Home"), MenuType.Home, icon: "fas fa-home"));
             sidebars.Add(new Menu("Privacy",Url.Action("Privacy", "Home"), MenuType.Link, icon: "fas fa-user-shield"));
+            sidebars.Add(new Menu("Account", type: MenuType.Tree, icon: "fas fa-users", children: accountMenus));
             sidebars.Add(new Menu("Financial", type: MenuType.Tree, icon: "fas fa-dollar-sign", children: financialMenus));
 
             return View(sidebars);
