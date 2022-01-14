@@ -2,14 +2,14 @@
 
     <PropertyGroup>
         <PackageType>Template</PackageType>
-        <PackageVersion>1.0.0</PackageVersion>
+        <PackageVersion>2.0.0</PackageVersion>
         <PackageId>marcio-eric.adminlte3-template</PackageId>
         <Title>Admin LTE 3</Title>
         <Authors>Márcio Nicolau</Authors>
         <Description>Template de painel web padrão</Description>
         <PackageTags>dotnet-new;templates;adminlte;core3;adminlte3</PackageTags>
         
-        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <TargetFramework>net6.0</TargetFramework>
 
         <IncludeContentInPack>true</IncludeContentInPack>
         <IncludeBuildOutput>false</IncludeBuildOutput>
@@ -55,6 +55,15 @@
       <_ContentIncludedByDefault Remove="wwwroot\lib\jquery\dist\jquery.min.js" />
       <_ContentIncludedByDefault Remove="wwwroot\lib\jquery\dist\jquery.min.map" />
       <_ContentIncludedByDefault Remove="wwwroot\lib\jquery\LICENSE.txt" />
+      <_ContentIncludedByDefault Remove="wwwroot\plugins\toastr\toastr.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\plugins\toastr\toastr.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\plugins\toastr\toastr.min.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\plugins\toastr\toastr.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\plugins\pdfmake\pdfmake.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\plugins\pdfmake\pdfmake.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\plugins\pdfmake\pdfmake.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\plugins\pdfmake\pdfmake.min.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\plugins\pdfmake\vfs_fonts.js" />
     </ItemGroup>
 
     <ItemGroup>
@@ -65,5 +74,7 @@
       <Content Include=".template.config\template.json" />
     </ItemGroup>
 
-
+    <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.1" />
+    </ItemGroup>
 </Project>
