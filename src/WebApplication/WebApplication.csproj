@@ -64,10 +64,15 @@
       <_ContentIncludedByDefault Remove="wwwroot\plugins\pdfmake\pdfmake.min.js" />
       <_ContentIncludedByDefault Remove="wwwroot\plugins\pdfmake\pdfmake.min.js.map" />
       <_ContentIncludedByDefault Remove="wwwroot\plugins\pdfmake\vfs_fonts.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\pages\dashboard.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\pages\dashboard2.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\pages\dashboard3.js" />
     </ItemGroup>
 
     <ItemGroup>
       <Folder Include="wwwroot" />
+      <Folder Include="wwwroot\css" />
+      <Folder Include="wwwroot\js" />
     </ItemGroup>
 
     <ItemGroup>
