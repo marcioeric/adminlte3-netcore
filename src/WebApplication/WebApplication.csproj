@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <PackageType>Template</PackageType>
-        <PackageVersion>2.0.0</PackageVersion>
+        <PackageVersion>2.0.1</PackageVersion>
         <PackageId>marcio-eric.adminlte3-template</PackageId>
         <Title>Admin LTE 3</Title>
         <Authors>Márcio Nicolau</Authors>
