@@ -2,14 +2,14 @@
 
     <PropertyGroup>
         <PackageType>Template</PackageType>
-        <PackageVersion>2.0.1</PackageVersion>
+        <PackageVersion>2024.6.0</PackageVersion>
         <PackageId>marcio-eric.adminlte3-template</PackageId>
         <Title>Admin LTE 3</Title>
         <Authors>Márcio Nicolau</Authors>
         <Description>Template de painel web padrão</Description>
         <PackageTags>dotnet-new;templates;adminlte;core3;adminlte3</PackageTags>
         
-        <TargetFramework>net6.0</TargetFramework>
+        <TargetFramework>net8.0</TargetFramework>
         <LangVersion>10.0</LangVersion>
 
         <IncludeContentInPack>true</IncludeContentInPack>
@@ -20,61 +20,6 @@
         <RepositoryType>Git</RepositoryType>
         <PackageLicenseUrl>https://github.com/marcio-eric/adminlte3-netcore/blob/master/LICENSE</PackageLicenseUrl>
     </PropertyGroup>
-
-    <ItemGroup>
-      <_ContentIncludedByDefault Remove="wwwroot\css\site.css" />
-      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css" />
-      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
-      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css" />
-      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />
-      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css" />
-      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map" />
-      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css" />
-      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
-      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap.css" />
-      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap.css.map" />
-      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap.min.css" />
-      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map" />
-      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js" />
-      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map" />
-      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js" />
-      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
-      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.js" />
-      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.js.map" />
-      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js" />
-      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map" />
-      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\LICENSE" />
-      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
-      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
-      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt" />
-      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation\dist\additional-methods.js" />
-      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation\dist\additional-methods.min.js" />
-      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation\dist\jquery.validate.js" />
-      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation\dist\jquery.validate.min.js" />
-      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation\LICENSE.md" />
-      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery\dist\jquery.js" />
-      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery\dist\jquery.min.js" />
-      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery\dist\jquery.min.map" />
-      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery\LICENSE.txt" />
-      <_ContentIncludedByDefault Remove="wwwroot\plugins\toastr\toastr.css" />
-      <_ContentIncludedByDefault Remove="wwwroot\plugins\toastr\toastr.js.map" />
-      <_ContentIncludedByDefault Remove="wwwroot\plugins\toastr\toastr.min.css" />
-      <_ContentIncludedByDefault Remove="wwwroot\plugins\toastr\toastr.min.js" />
-      <_ContentIncludedByDefault Remove="wwwroot\plugins\pdfmake\pdfmake.js" />
-      <_ContentIncludedByDefault Remove="wwwroot\plugins\pdfmake\pdfmake.js.map" />
-      <_ContentIncludedByDefault Remove="wwwroot\plugins\pdfmake\pdfmake.min.js" />
-      <_ContentIncludedByDefault Remove="wwwroot\plugins\pdfmake\pdfmake.min.js.map" />
-      <_ContentIncludedByDefault Remove="wwwroot\plugins\pdfmake\vfs_fonts.js" />
-      <_ContentIncludedByDefault Remove="wwwroot\js\pages\dashboard.js" />
-      <_ContentIncludedByDefault Remove="wwwroot\js\pages\dashboard2.js" />
-      <_ContentIncludedByDefault Remove="wwwroot\js\pages\dashboard3.js" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="wwwroot" />
-      <Folder Include="wwwroot\css" />
-      <Folder Include="wwwroot\js" />
-    </ItemGroup>
 
     <ItemGroup>
       <Content Include=".template.config\template.json" />
