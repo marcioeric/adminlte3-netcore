@@ -1,6 +1,9 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Serilog;
+
+
 
 var builder = Microsoft.AspNetCore.Builder.WebApplication.CreateBuilder();
 
@@ -10,6 +13,16 @@ builder.Services.AddControllersWithViews()
 #elif !DEBUG
     ;
 #endif
+
+#region Serilog Configuration
+
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.Console()
+    .CreateLogger();
+
+builder.Services.AddSerilog();
+
+#endregion
 
 var app = builder.Build();
 
