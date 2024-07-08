@@ -1,9 +1,8 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using OpenTelemetry.Metrics;
 using Serilog;
-
-
 
 var builder = Microsoft.AspNetCore.Builder.WebApplication.CreateBuilder();
 
@@ -21,6 +20,12 @@ Log.Logger = new LoggerConfiguration()
     .CreateLogger();
 
 builder.Services.AddSerilog();
+
+#endregion
+
+#region Metrics Configuration
+
+builder.Services.AddOpenTelemetry().WithMetrics(b => b.AddAspNetCoreInstrumentation().AddPrometheusExporter());
 
 #endregion
 
@@ -46,5 +51,9 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.UseSerilogRequestLogging();
+
+app.UseOpenTelemetryPrometheusScrapingEndpoint(context => context.Request.Path == "/internal/metrics");
 
 app.Run();
